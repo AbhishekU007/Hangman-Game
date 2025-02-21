@@ -1,0 +1,50 @@
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr); /* 10 keys in first row */
+  gap: 0.5rem;
+  justify-content: center;
+  max-width: 600px;
+  margin: auto;
+  margin-left: auto;
+}
+
+/* Second row */
+@media (max-width: 600px) {
+  .keyboard {
+    grid-template-columns: repeat(9, 1fr); /* Adjust for smaller screens */
+  }
+}
+
+/* Button styles */
+.btn {
+  width: 100%;
+  max-width: 50px;
+  aspect-ratio: 1 / 1;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #333;
+  background-color: #fff;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  color: hsl(200, 100%, 50%);
+}
+
+/* Active letter */
+.btn.active {
+  background-color: hsl(200, 100%, 50%);
+  color: white;
+}
+
+/* Inactive letter */
+.btn.inactive {
+  background-color: #ddd;
+  color: #aaa;
+}
+
+/* Hover effect */
+.btn:hover:not(:disabled) {
+  background-color: hsl(200, 100%, 75%);
+  transform: scale(1.1);
+}
